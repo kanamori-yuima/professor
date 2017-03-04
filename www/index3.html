@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <link rel="stylesheet" href="components/loader.css">
+    <script src="components/loader.js"></script>
+     <link rel="stylesheet" href="css/style.css">
+<!-- デジタル時間に関してのJS -->
+<script type="text/javascript">
+    function digitalClock() {
+        var now = new Date();
+        document . getElementById( 'digital-clock' ) . innerHTML= now . toLocaleString();
+        window . setTimeout( "digitalClock()", 1000);
+}
+    window . onload = digitalClock;
+</script>
+<!-- 時間表の下にあるストップウォッチについて -->
+    <script>
+        (function($){
+
+            $(document).ready(function(){
+             var tablist = $("#tab_head li");
+            var tabbody = $("#tab_body li");
+
+            tablist.click(function(){
+            var idx = tablist.index($(this));
+            tablist.removeClass("on").eq(idx).addClass("on");
+            tabbody.removeClass("on").eq(idx).addClass("on");
+             });
+
+            });
+
+        })(jQuery);
+    </script>
+    <script>
+    window.onload = initialize;
+function initialize() {
+    document.getElementById( 'stopwatchStartAndStop' ).onclick=stopwatch;
+    document.getElementById( 'stopwatchClear' ).onclick=stopwatchClear;
+}
+
+var $enable = false, $stopwatchTime, $startTime, $stopwatchTimeAdd = 0;
+function stopwatch() {
+    $enable = !$enable;
+    if( $enable ){
+        stopwatchStart();
+    }else{
+        stopwatchStop();
+    }
+}
+function stopwatchStart() {
+    document.getElementById( 'stopwatchStartAndStop' ).innerHTML= 'ストップ';
+    if( $startTime === undefined ){
+        var $startDate = new Date();
+        $startTime = $startDate.getTime();
+    }
+    var $nowDate = new Date();
+    $stopwatchTime = $nowDate.getTime() - $startTime + $stopwatchTimeAdd;
+    $stopwatchMillisecond = $stopwatchTime % 1000;
+    $stopwatchSecond = Math.floor( $stopwatchTime / 1000 ) % 60;
+    $stopwatchMinute = Math.floor( $stopwatchTime / 1000 / 60 ) % 60;
+    $stopwatchHour = Math.floor( Math.floor( $stopwatchTime / 1000 / 60 ) / 60 );
+    if( $stopwatchMillisecond < 10 ){
+        $stopwatchMillisecond = '0' + $stopwatchMillisecond;
+    }
+    if( $stopwatchMillisecond < 100 ){
+        $stopwatchMillisecond = '0' + $stopwatchMillisecond;
+    }
+    if( $stopwatchSecond < 10 ){
+        $stopwatchSecond = '0' + $stopwatchSecond;
+    }
+    if( $stopwatchMinute < 10 ){
+        $stopwatchMinute = '0' + $stopwatchMinute;
+    }
+    if( $stopwatchHour < 10 ){
+        $stopwatchHour = '0' + $stopwatchHour;
+    }
+    document.getElementById( 'stopwatchHour' ).innerHTML= $stopwatchHour;
+    document.getElementById( 'stopwatchMinute' ).innerHTML= $stopwatchMinute;
+    document.getElementById( 'stopwatchSecond' ).innerHTML= $stopwatchSecond;
+    document.getElementById( 'stopwatchMillisecond' ).innerHTML= $stopwatchMillisecond;
+    $stopwatch = setTimeout( "stopwatchStart()", 1 );
+}
+function stopwatchStop() {
+    document.getElementById( 'stopwatchStartAndStop' ).innerHTML= 'スタート';
+    clearTimeout( $stopwatch );
+    $startTime = undefined;
+    $stopwatchTimeAdd = $stopwatchTime;
+}
+function stopwatchClear() {
+    $startTime = undefined;
+    $stopwatchTimeAdd = 0;
+    document.getElementById( 'stopwatchHour' ).innerHTML= '00';
+    document.getElementById( 'stopwatchMinute' ).innerHTML= '00';
+    document.getElementById( 'stopwatchSecond' ).innerHTML= '00';
+    document.getElementById( 'stopwatchMillisecond' ).innerHTML= '000';
+}
+</script>
+</head>
+<body>
+<!--デジタル時間に関してのHTML-->
+<div id="digital-clock"></div> 
+    
+<!--時間表に関してのHTML-->
+<div class="timeboard">
+    <div class="box time">時間
+        <p class="line time">0:00<p>2:00</p><p>4:00</p>   
+        <p>6:00</p><p>8:00</p><p>12:00</p>
+        <p>14:00</p><p>16:00</p><p>18:00</p>
+        <p>20:00</p><p>22:00</p><p>24:00</p>
+    </div>
+    <div class="box contents">内容</div>
+    <div class="box remarks">備考</div>
+</div>
+<!-- ボタン以下のタブの設定 --> 
+<div class="tab">
+    <ul class="tab_head">
+        <li class="tab_head cooking">炊事</li>
+        <li class="tab_head laundry">洗濯</li>
+        <li class="tab_head keeping">掃除</li>
+        <li class="tab_head childcare">育児</li>
+        <li class="tab_head shopping">買物</li>
+        <li class="tab_head nursingcare">介護</li>
+        <li class="tab_head other">他</li>
+    </ul>
+    <ul id="tab_body">
+        <li class="on"></li>   
+<!--ボタン、画像、ストップウォッチの設定-->        
+<img src="spoon01_27.png" alt="picture">
+    <div id="stopwatchControl">
+        <button id="stopwatchStartAndStop">スタート</button>
+        <br /><button id="stopwatchKeeping">保存</button><!-- JSで定義されていない！-->
+        <br /><button id="stopwatchClear">クリア</button>
+    </div>
+    <div id="stopwatch">
+        <span id="stopwatchHour">00</span>
+        <span>:</span>
+        <span id="stopwatchMinute">00</span>
+        <span>:</span>
+        <span id="stopwatchSecond">00</span>
+        <span>:</span>
+        <span id="stopwatchMillisecond">000</span>
+    </div>
+    </ul>
+</div>
+</body>
+</html>

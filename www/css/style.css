@@ -1,0 +1,404 @@
+/*index.htmlに関してのコード*/
+body{
+    background-color: skyblue;
+    font-family: fantasy;
+    position: relative;
+    background-color: #ffffe7;
+    background-image:linear-gradient(rgba(241,207,164,0.5) .1em, transparent .1em);
+    background-size: 100% 1.5em;
+    line-height:1.0em;
+}
+   
+.firstpage1 h1{
+    transform: rotate(4deg);
+}   
+
+.firstpage2 {
+    transform: rotate(-5deg);
+}
+
+input{
+    width: 280px;
+    height: 35px;
+    margin-left: 10px;
+    margin-bottom: 18px;
+    font-size:25px;
+}
+
+.firstpage3 h3{
+    transform: rotate(5deg);
+}
+
+.firstpage4 a{
+    font-size: 20px;
+    margin-left: 50px;
+}
+
+
+.autologin{
+    float:left;
+    margin-top: -29px;
+    margin-left: 230px;
+    margin-bottom: 30px;
+}
+
+.harigamidesign{
+  background-color: #bcffd6;
+  border: 1px solid #CCC;
+  box-shadow: 0 0 5px #999;
+  height: 80px;
+  margin:; 30px auto;
+  padding: 20px;
+  position: relative;
+  width: 290px;
+  border-radius: 10px;
+  transform: rotate(-3deg);
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.harigamidesign:before {
+  background-color: #FFF;
+  border: 1px solid #DDD;
+  border-left: 2px dotted #DDD;
+  border-right: 2px dotted #DDD;
+  border: 1px solid #DDD;
+  box-shadow: 0 0 3px #CCC;
+  content: "";
+  height: 38px;
+  left: 95px;
+  opacity: 0.7;
+  position: absolute;
+  top: -20px;
+  transform: rotate(-5deg);
+  width: 148px;
+}  
+    
+
+/*index2.htmlに関してのコード（全体の画面とボタンに関して）*/
+.paper {
+  background-color:#ffd2d4;
+  height: 100px;
+  width: 290px;
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.paper > a {
+  color: #333;
+  font-size: 30px;
+  line-height: 50px;
+  text-decoration: none;
+}
+
+.paper:before,
+.paper:after {
+  background-color: #666;
+  box-shadow: 0 5px 10px #666;
+  content: "";
+  height: 70px;
+  left: 90px;
+  position: absolute;
+  top: 25px;
+  transform: rotate(3deg);
+  width: 195px;
+  z-index: -1;
+}
+
+.paper:after {
+  left: 0px;
+  transform: rotate(-3deg);
+}
+
+.paper.paper2{
+    background-color:#abeaff;
+    margin-left: 30px;
+    text-align: center;
+    font-family: serif;
+}
+
+.paper.paper3{
+    background-color:#ffa13e;
+    text-align: center;
+}
+
+.explain1{
+    transform: rotate(4deg);
+}
+
+.explain2{
+    transform: rotate(-4deg);
+}
+
+.explain3{
+    transform: rotate(2deg);
+}
+
+/*index3.htmlに関してのコード*/
+/*時間表に関して*/
+.timeboard{
+    border: 3px dotted #CCC;
+    display: table;
+    width: 300px;
+    height: 450px
+}
+
+.box{
+    display: table-cell; 
+    font-size: 20px;
+    font-family: fantasy;
+    margin: 0 auto;
+    background-color: #FFF;
+    
+    
+}
+
+.box.time{
+    width:50px;
+    border-right: 3px dotted #CCC;
+}
+
+.box.contents{
+    border-right: 3px dotted #CCC;
+}
+
+.box.remarks{
+}
+
+/*タブに関して*/
+.tab {
+  margin: 0 auto;
+  padding: 10px;
+  width: 300px;
+}
+
+.tab_head {
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  font-size: 15px;
+}
+
+.tab_head > li {
+  background-color: #EEE;
+  border: 1px solid #CCC;
+  border-bottom: 0;
+  cursor: pointer;
+  float: left;
+  margin-right: -1px;
+  text-align: center;
+  width: 40px;
+  height: 30px;
+  margin-bottom: -10px;
+  line-height: 25px;
+}
+
+.tab_head > li.on {
+  background-color: #FFF;
+  cursor: default;
+}
+
+#tab_body {
+  background-color: #FFF;
+  border: 1px solid #CCC;
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+#tab_body > li {
+  display: none;
+}
+
+#tab_body > li.tab_head.cooking {
+  display: block;
+}
+
+.tab_head.cooking{
+    background-color:#ff443e;
+}
+.tab_head.laundry{
+    background-color:#84e7ff;
+}
+.tab_head.keeping{
+    background-color: #efee00;
+}
+.tab_head.childcare{
+    background-color: #ffb9ca;
+}
+.tab_head.shopping{
+    background-color: #9aff00;
+}
+.tab_head.nursingcare{
+    background-color: #cf9fee; 
+}
+
+/*画像に関して*/
+
+#spoon {
+    width: 60px;
+    height: 80px;
+    float: left;
+}
+
+/*ストップウォッチに関して*/
+
+div#stopwatchWrapper {
+    text-align: center;
+    border: 3px solid #CCC;
+    width: 300px;
+    height: 200px;
+}
+div#stopwatch {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    width: 260px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px #000000 solid;
+    border-radius: 6px;
+    margin: 0 auto;
+    margin-top:15px;
+}
+
+div#stopwatchControl{
+    float:right;
+    width:175px;
+    margin-top: 5px;
+}
+
+#stopwatchStartAndStop{
+    width:120px;
+    height:30px;
+    margin-bottom: 5px;
+    margin-left:10px;
+    font-size: 20px;
+}
+
+#stopwatchKeeping{
+    width:120px;
+    height:30px;
+    margin-bottom: 5px;
+    margin-left:10px;
+    font-size: 20px;
+}
+
+#stopwatchClear{
+    width:120px;
+    height:30px;
+    margin-bottom: 5px;
+    margin-left:10px;
+    font-size: 20px;
+}
+
+img{
+    width:80px;
+    height:100px;
+    
+}
+/*時間に関して*/
+/*div#digital-clock {
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+    background: gray url(earth.png) no-repeat center top;
+    text-align: center;
+    width: 300px;
+    height: 15px;
+    padding: 15px 20px;
+    border: 2px #000000 solid;
+    float: left;
+    }*/
+/*index4.htmlに関してのコード*/
+/*index5.htmlに関してのコード(１枚目の張り紙について)*/
+.fifthpage1 {
+  background-color: #FFF;
+  border: 1px solid #CCC;
+  box-shadow: 0 0 5px #999;
+  height: 200px;
+  margin:; 30px auto;
+  padding: 20px;
+  position: relative;
+  width: 290px;
+  border-radius: 20px;
+  transform: rotate(-3deg);
+}
+
+.fifthpage1 > h2{
+ font-size: 20px;
+ float: left;
+}
+
+
+.fifthpage1 > p {
+  color: #444;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.fifthpage1:before {
+  background-color: #b0ffff;
+  border: 1px solid #DDD;
+  border-left: 2px dotted #DDD;
+  border-right: 2px dotted #DDD;
+  border: 1px solid #DDD;
+  box-shadow: 0 0 3px #CCC;
+  content: "";
+  height: 38px;
+  left: 95px;
+  opacity: 0.7;
+  position: absolute;
+  top: -20px;
+  transform: rotate(-5deg);
+  width: 148px;
+}
+
+/*index5.htmlに関してのコード(２枚目の張り紙について)*/
+.fifthpage2 {
+  background-color: #FFF;
+  border: 1px solid #CCC;
+  box-shadow: 0 0 5px #999;
+  height: 220px;
+  margin: 40px auto;
+  padding: 20px;
+  position: relative;
+  width: 250px;
+  transform: rotate(5deg);
+}
+
+.fifthpage2 > h2{
+ font-size: 20px;
+ float: left;
+ 
+}
+
+
+.fifthpage2 > p {
+  color: #444;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.fifthpage2:before {
+  background-color:#ffd9ff;
+  border: 1px solid #DDD;
+  border-left: 2px dotted #DDD;
+  border-right: 2px dotted #DDD;
+  border: 1px solid #DDD;
+  box-shadow: 0 0 3px #CCC;
+  content: "";
+  height: 38px;
+  left: 75px;
+  opacity: 0.7;
+  position: absolute;
+  top: -25px;
+  transform: rotate(-10deg);
+  width: 170px;
+  
+}
+
+
